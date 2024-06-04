@@ -1,0 +1,34 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.MyApplication" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/blue</item>
+    </style>
+
+    <style name="Theme.MyApplication" parent="Base.Theme.MyApplication" />
+
+    <!-- Mi estilo personalizado, solo tipos de letras y botones -->
+    <style name="ButtonBase" >
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">@dimen/text_size_18</item>
+    </style>
+
+    <style name="ButtonBlue" parent="ButtonBase">
+        <item name="backgroundTint">@color/blue</item>
+    </style>
+
+    <style name="ButtonRed" parent="ButtonBase">
+        <item name="backgroundTint">@color/color1</item>
+    </style>
+
+    <style name="EditTextLogin">
+        <item name="android:height">62dp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:drawableTint">@color/black</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:background">@drawable/edittext_rounded</item>
+        <item name="android:drawablePadding">12dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:textCursorDrawable">@color/white</item>
+    </style>
+</resources>
