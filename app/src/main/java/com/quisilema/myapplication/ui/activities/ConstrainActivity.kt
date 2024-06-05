@@ -42,14 +42,10 @@ class ConstrainActivity : AppCompatActivity() {
 
     private fun initVariables() {
         newsAdapter = NewsAdapter(
-
             { descriptionItem(it) },
-            { deteleItem(it) },
-        )
+            { deleteItem(it) })
         binding.rvTopNews.adapter = newsAdapter
-
         binding.rvTopNews.layoutManager = CarouselLayoutManager()
-
     }
 
     private fun initListeners() {
@@ -89,23 +85,20 @@ class ConstrainActivity : AppCompatActivity() {
 
     private fun initData() {
         binding.pgbarLoadData.visibility = View.VISIBLE
-
         lifecycleScope.launch(Dispatchers.IO) {
 
             val resultItems = GetAllTopsNewUserCase().invoke()
-
             withContext(Dispatchers.Main) {
-
                 binding.pgbarLoadData.visibility = View.INVISIBLE
 
                 resultItems.onSuccess {
                     items = it.toMutableList()
-                    newsAdapter.itemList= items
-                    newsAdapter.notifyDataSetChanged()
+                    newsAdapter.submitList(items) // Aquí es donde cambiamos a usar submitList
                 }
 
                 resultItems.onFailure {
-                    Snackbar.make(binding.refreshRV, it.message.toString(),Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(binding.refreshRV, it.message.toString(), Snackbar.LENGTH_SHORT)
+                        .show()
                 }
             }
         }
@@ -123,29 +116,22 @@ class ConstrainActivity : AppCompatActivity() {
 //      startActivity(intent)
 
     }
+    private fun deleteItem(position: Int) {
+        items.removeAt(position)
+        newsAdapter.submitList(items.toList()) // Aquí es donde cambiamos a usar submitList
+    }
 
-    private fun  deteleItem(position : Int) {
-
-    items.removeAt(position)
-    newsAdapter.itemList= items
-    newsAdapter.notifyItemRemoved(position)
-
-}
-
-    private fun  addItem() {
-
+    private fun addItem() {
         items.add(
             NewsDataUI(
                 "1",
-                "https://www.google.com",
-                "Noticia mentira",
-                "IMG",
-                "Descripcion fantasma",
-                languague = "es"
+                "www.google.com",
+                "Noticia fake",
+                "imagen_aleatoria",
+                "description_fantasma",
+                "ES"
             )
         )
-        newsAdapter.itemList= items
-        newsAdapter.notifyItemInserted(items.size-1)
-
+        newsAdapter.submitList(items) // Aquí es donde cambiamos a usar submitList
     }
 }

@@ -9,45 +9,36 @@ import com.quisilema.myapplication.R
 import com.quisilema.myapplication.data.network.entities.topNews.Data
 import com.quisilema.myapplication.databinding.ItemTopNewsBinding
 import com.quisilema.myapplication.ui.entities.NewsDataUI
+import androidx.recyclerview.widget.ListAdapter
 
 class NewsAdapter(
-
-    private val onClickItem : (NewsDataUI) -> Unit,
-    private val onDeleteItem : (Int) -> Unit
+    private val onClickItem: (NewsDataUI) -> Unit,
+    private val onDeleteItem: (Int) -> Unit
 ) :
-    RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
-
-   var itemList: List<NewsDataUI> = emptyList()
+    ListAdapter<NewsDataUI, NewsAdapter.NewsViewHolder>(NewsDiffCallback()) {
 
     class NewsViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
         private val binding = ItemTopNewsBinding.bind(view)
 
-        fun render(data: NewsDataUI, onClickItem: (NewsDataUI) -> Unit,
-                   onDeleteItem: (Int) -> Unit
-
-
-        ){
+        fun render(data: NewsDataUI,
+                   onClickItem: (NewsDataUI) -> Unit,
+                   onDeleteItem: (Int) -> Unit) {
 
             binding.txtTitleNews.text = data.name
             binding.txtUrlNews.text = data.url
             binding.txtDescNews.text = data.description
-
-
-
-
             binding.imgNews
                 .load(data.image) {
-                    placeholder(R.drawable.logo)
+                    placeholder(R.drawable.ic_launcher_background)
                 }
+
             itemView.setOnClickListener {
                 onClickItem(data)
             }
+
             binding.btnDelete.setOnClickListener {
                 onDeleteItem(adapterPosition)
-
             }
-
         }
     }
 
@@ -60,17 +51,10 @@ class NewsAdapter(
                 false
             )
         )
-
     }
-
-    override fun getItemCount() = itemList.size
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        holder.render(itemList[position],onClickItem,
-            onDeleteItem,
-
-        )
+        val item = getItem(position)
+        holder.render(item, onClickItem, onDeleteItem)
     }
-
-
 }

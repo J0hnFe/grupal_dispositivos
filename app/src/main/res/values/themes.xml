@@ -13,7 +13,7 @@
         <item name="android:layout_margin">10dp</item>
         <item name="android:textSize">@dimen/text_size_18</item>
         <item name="android:backgroundTint">@color/white</item>
-        <item name="android:textColor">@color/red</item>
+        <item name="android:textColor">@color/black</item>
         <item name="android:layout_height">48dp</item>
     </style>
 
@@ -22,7 +22,7 @@
     </style>
 
     <style name="ButtonBlue" parent="ButtonBase">
-        <item name="android:backgroundTint">@color/blue</item>
+        <item name="android:backgroundTint">@color/design_default_color_secondary</item>
     </style>
 
     <style name="EditTextLogin">
