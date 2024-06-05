@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.carousel.MaskableFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/carousel_item_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginStart="4dp"
+    android:layout_marginEnd="4dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:shapeAppearance="?attr/shapeAppearanceCornerExtraLarge">
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    android:layout_height="600dp">
+
+    <ImageView
+        android:id="@+id/imgNews"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        tools:src="@drawable/background_login_gradient"/>
+
+    <TextView
+        android:id="@+id/txtTitleNews"
+        tools:text="Titulo"
+        android:textSize="21sp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtUrlNews"
+        tools:text="Url"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/txtDescNews"
+        tools:text="Descripcion"
+        android:textSize="12sp"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:text="Eliminar"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ButtonBlue" />
+
+
+
+</LinearLayout>
+
+
+</LinearLayout>
+</com.google.android.material.carousel.MaskableFrameLayout>

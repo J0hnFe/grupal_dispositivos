@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/degradadorojo"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/pngwing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/dancing_script"
+            android:text="Un gran poder..."
+            android:textColor="@color/white"
+            android:textSize="28sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etxt_user"
+            style="@style/EditTextLogin"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_margin="20dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:drawableLeft="@drawable/ic_person_24px"
+            android:hint="Usuario" />
+
+        <EditText
+            android:id="@+id/etxt_password"
+            style="@style/EditTextLogin"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_margin="20dp"
+            android:drawableLeft="@drawable/ic_lock_24px"
+            android:hint="Contraseña"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionGo"
+            android:inputType="textPassword" />
+
+        <Button
+            style="@style/ButtonBase"
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_margin="15dp"
+            android:text="@string/btn_login_text"
+            app:icon="@drawable/login_24px"
+            android:textColor="@color/black"
+            app:iconGravity="end"
+            app:iconTint="@color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="end"
+            android:text="Olvide mi contraseña"
+            android:textColor="@color/white"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:src="@drawable/araglog"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/listarItem"
+        android:title="Listar"
+        android:icon="@drawable/ic_person_24px"
+
+        />
+    <item
+        android:id="@+id/FavItem"
+        android:title="Favoritos"
+        android:icon="@drawable/ic_toggle_off_24px"
+
+        />
+    <item
+        android:id="@+id/NoFavItem"
+        android:title="No Favoritos"
+        android:icon="@drawable/ic_person_24px" />
+</menu>

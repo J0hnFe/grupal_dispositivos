@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My new App</string>
+    <string name="btn_login_text">Ingresar</string>
+
+    <string name="txt_user">Usuario</string>
+    <string name="txt_password">Contraseña</string>
+</resources>
