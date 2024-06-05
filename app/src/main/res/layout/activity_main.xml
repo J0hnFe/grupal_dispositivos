@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/degradado1"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.activities.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/edgerunners"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:text="Así que... vuelve arrastrándose?"
+            android:textColor="@color/black"
+            android:textSize="25sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/etxt_user"
+            style="@style/EditTextLogin"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_margin="20dp"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
+            android:drawableLeft="@drawable/person"
+            android:hint="Usuario" />
+
+        <EditText
+            android:id="@+id/etxt_password"
+            style="@style/EditTextLogin"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_margin="20dp"
+            android:drawableLeft="@drawable/key"
+            android:hint="Contraseña"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionGo"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/btn_login"
+            style="@style/ButtonBase"
+            android:layout_width="match_parent"
+            android:layout_height="62dp"
+            android:layout_margin="20dp"
+            android:text="@string/btn_login_text"
+            app:icon="@drawable/login"
+            app:iconGravity="end"
+            app:iconTint="@color/white" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="20dp"
+            android:gravity="end"
+            android:text="Olvide mi contraseña"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="82dp"
+            android:gravity="center"
+            android:text="¿No tiene cuenta? Regístrese"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+</LinearLayout>
